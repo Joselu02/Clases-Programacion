@@ -1,11 +1,62 @@
+import javax.xml.transform.Source;
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+
+
         System.out.println("Programa exceptions");
-        System.out.println("Procedemos a ejecutar errores en codigo");
+        // Scanner scanner = new Scanner(System.in);
+        boolean fallo = false;
+        int resultado = 0;
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Introduce el valor del op1");
+            int op1 = scanner.nextInt();
+            System.out.println("Introduce el valor del op2");
+            int op2 = scanner.nextInt();
+            // yo como programador decido es un error que los numeros sean negativos
+            if (op1 < 0 || op2 < 0) {
+                throw new Exception("Fallo, numeros muy grandes");
+            } else if (op1 >100|| op2>100){
+                throw new RuntimeException("Error en el codigo numerico");
+            }
+            resultado = op1 / op2;
+            System.out.println("El resultado es " + resultado);
+
+        } catch (InputMismatchException | ArithmeticException e) {
+            System.out.println("Error en la lectura de los operandos o resultado");
+            fallo = true;
+        }  catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        // boolean fallo = false;
+        /*
+        do {
+            try {
+                System.out.println("Introduce el primer numero");
+                int op1 = scanner.nextInt();
+                System.out.println("Introduce el segundo numero");
+                int op2 = scanner.nextInt();
+                resultado = op1 / op2;
+                fallo = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Algun dato de los introducidos no es correcto");
+                fallo = true;
+            } catch (ArithmeticException e) {
+                fallo = true;
+                System.out.println("El operando 2 no es valido");
+            }
+        } while (fallo);
+        scanner.close();
+        System.out.println("El resultado de la division es " + resultado);*/
+        /*
         int resultado = 100000;
         String nombre = null;
         try {
@@ -31,6 +82,8 @@ public class Main {
             // cerrar streams
             System.out.println("El resultado es " + resultado);
         }
+         */
+
         System.out.println("Ejecutamos el final del programa");
     }
 }
