@@ -1,3 +1,5 @@
+//Este no tiene nada que ver con lo del banco, es para las estructuras de exception
+
 import javax.xml.transform.Source;
 import java.io.File;
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class Main {
             }
             resultado = op1 / op2;
             System.out.println("El resultado es " + resultado);
+            // se ha cerrado
 
         } catch (InputMismatchException | ArithmeticException e) {
             System.out.println("Error en la lectura de los operandos o resultado");
