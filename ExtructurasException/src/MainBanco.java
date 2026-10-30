@@ -11,7 +11,7 @@ public class MainBanco {
         CuentaCorriente cuenta2 = new CuentaCorriente("Antonio");
         CuentaCorriente cuenta3 = new CuentaCorriente("Arantxa",700);
         CuentaCorriente cuenta4 = new CuentaCorriente();*/
-       // bbva.darAltaCuenta(new CuentaCorriente("Jose",1000,1234));
+        bbva.darAltaCuenta(new CuentaCorriente("Jose",1000,1234));
 
         try {
             bbva.ingresarDinero(1000,1234,"Jose");
