@@ -7,6 +7,7 @@ public class CuentaCorriente {
     private int pin;
 
     public CuentaCorriente(){}
+
     public CuentaCorriente(String titular, double saldo, int pin){
         this.titular = titular;
         this.saldo = saldo;

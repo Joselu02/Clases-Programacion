@@ -1,6 +1,7 @@
 package controller;
 
 import model.CuentaCorriente;
+import utils.BancoException;
 
 public class Banco {
     //direccion, nombre, numeroEntidad, caja
@@ -23,11 +24,25 @@ public class Banco {
         this.cuenta = cuenta;
     }
 
-    public void ingresarDinero(double saldoIngreso, int pin, String titular) throws Exception{
+    public void ingresarDinero(double saldoIngreso, int pin, String titular) throws BancoException{
+        try {
+            if (cuenta.getTitular().equalsIgnoreCase(titular) && cuenta.getPin() == pin) {
+                // ingresar dinero
+            } else {
+                throw new BancoException("Validacion erronea");
+            }
+
+        } catch (NullPointerException e){
+            System.out.println("No hay cuenta");
+        }
+    }
+
+    public void cancelarCuenta(double saldoIngreso, int pin, String titular) throws Exception {
+
         if(cuenta.getPin() == pin && cuenta.getTitular().equalsIgnoreCase(titular)){
             //ingreso dinero
         } else {
-            //aviso que los datos no son validos
+            System.out.println("Fallo de validacion");
         }
     }
 

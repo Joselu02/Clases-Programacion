@@ -1,5 +1,6 @@
 import controller.Banco;
 import model.CuentaCorriente;
+import utils.BancoException;
 
 public class MainBanco {
 
@@ -15,8 +16,8 @@ public class MainBanco {
 
         try {
             bbva.ingresarDinero(1000,1234,"Jose");
-        }catch (Exception e){
-            System.out.println("No hay cuenta en el banco");
+        }catch (BancoException e){
+            System.out.println(e.getMessage());
         }
     }
 }
