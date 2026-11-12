@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("De que cantirar es el array de los numeros");
+            System.out.println("De que cantidad es el array de los numeros");
             int cantidad = scanner.nextInt();
             Operaciones operaciones = new Operaciones(cantidad);
             // numeros = [0,0,0,0,0,0]
@@ -36,7 +36,7 @@ public class Main {
                         // 1,2,3,4,5 -> 3 -> 6
                         if (operaciones.buscar(numeroBuscar)) {
 
-                            // el numero esta en al arrau
+                            // el numero esta en al array
                             int numeroCambiar;
                             do {
                                 System.out.println("Indica el nuevo numero");
