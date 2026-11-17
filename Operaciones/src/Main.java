@@ -53,7 +53,7 @@ public class Main {
                     }
                     case 5 -> {
 
-                        //operaciones.rotarDer();
+                        operaciones.rotarDer();
                         //operaciones.rotarIzq();
                     }
                     case 6 -> operaciones.invertir();
